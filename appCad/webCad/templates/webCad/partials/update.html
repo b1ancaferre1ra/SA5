@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE.html>
+<html lang="pt-br">
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        {% include "webCad/partials/header.html" %}
+    
+        <div class="cadNow">
+            <h3>Dados atuais do cadastro:</h3>
+            <p><strong>Nome:</strong> {{pessoa.nome}}</p>
+            <p><strong>Data de Nascimento:</strong> {{pessoa.data}}</p>
+            <p><strong>Email:</strong> {{pessoa.email}}</p>
+            <p><strong>País:</strong> {{pessoa.pais}}</p>
+            <br>
+        </div>
+        
+        <form action="{% url 'atualizar_id' pessoa.id %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="nome" value="{{pessoa.nome}}" placeholder="Nome Completo">
+            <input type="date" name="data" value="{{pessoa.data}}">
+            <input type="text" name="email" value="{{pessoa.email}}" placeholder="example@dom.com">
+            <input type="text" name="pais" value="{{pessoa.pais}}" placeholder="País onde Trabalha">
+            <button type="submit">Salvar</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE.html>
+<html lang="pt-br">
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        {% include "webCad/partials/header.html" %}
+
+        {% include "webCad/partials/search.html" with url_search="pesquisar" %}
+
+        {% if dados %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                        <th>Email</th>
+                        <th>País</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in dados %}
+                    <tr>
+                        <td>{{row.id}}</td>
+                        <td>{{row.nome}}</td>
+                        <td>{{row.data|date:"d/m/Y"}}</td>
+                        <td>{{row.email}}</td>
+                        <td>{{row.pais}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% else %}
+         <div>
+            <p id="msg">Não foram encontradas correspondências à pesquisa...</p>
+        </div>
+        {% endif %}
+                
+        </div>
+    </body>
+</html>

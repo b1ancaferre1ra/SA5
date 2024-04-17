@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE.html>
+<html lang="pt-br">
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        {% include "webCad/partials/header.html" %}
+        <form action="{% url 'cadastrar' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="nome" placeholder="Nome Completo">
+            <input type="date" name="data">
+            <input type="text" name="email" placeholder="example@dom.com">
+            <input type="text" name="pais" placeholder="País onde Trabalha">
+            <button type="submit">Salvar</button>
+        </form>
+
+        {% if nome %}
+            <div class="cadNow">
+                <h3>Dados do cadastro realizado:</h3>
+                <p><strong>Nome:</strong> {{nome}}</p>
+                <p><strong>Data de Nascimento:</strong> {{data}}</p>
+                <p><strong>Email:</strong> {{email}}</p>
+                <p><strong>País:</strong> {{pais}}</p>
+            </div>
+        {% endif%}     
+    </body>
+</html>        

@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE.html>
+<html lang="pt-br">
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        {% include "webCad/partials/header.html" %}
+
+        <div class="container">
+        
+            {% if dados %}
+            <p>10 últimos cadastros realizados:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                        <th>Email</th>
+                        <th>País</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in dados %}
+                    <tr>
+                        <td>{{row.id}}</td>
+                        <td>{{row.nome}}</td>
+                        <td>{{row.data|date:"d/m/Y"}}</td>
+                        <td>{{row.email}}</td>
+                        <td>{{row.pais}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+         {% endif %}
+                
+        </div>
+    </body>
+    <!--{-% extends "webCad/global/contato" %}  IMPORTA TODO O CONTEÚDO DA OUTRA PÁGINA-->
+    <!--{%block content%} & {%endblock content%} SERVE PARA INSERIR CONTEÚDO NO '"MEIO" DO EXTEND'-->
+</html>

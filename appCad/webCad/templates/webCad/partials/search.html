@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE.html>
+<html lang="pt-br">
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        {% include "webCad/partials/header.html" %}
+
+        <form action="{% url url_search %}" method="get">
+            {% csrf_token %}
+            <input type="text" name="nome" placeholder="Digite o NOME do Funcionário..." />
+            <button type="submit">Pesquisar</button>
+        </form>
+    </body>
+</html>

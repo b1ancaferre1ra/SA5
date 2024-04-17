@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE.html>
+<html lang="pt-br">
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        {% include "webCad/partials/header.html" %}
+        {% include "webCad/partials/search.html" with url_search="atualizar" %}
+
+        <div class="container">
+        
+            {% if pessoa %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                        <th>Email</th>
+                        <th>País</th>
+                        <th>AÇÃO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in pessoa %}
+                    <tr>
+                        <td>{{row.id}}</td>
+                        <td>{{row.nome}}</td>
+                        <td>{{row.data|date:"d/m/Y"}}</td>
+                        <td>{{row.email}}</td>
+                        <td>{{row.pais}}</td>
+                        <td><a href="{% url 'atualizar_id' row.id %}">Atualizar</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+         {% endif %}
+                
+        </div>
+    </body>
+</html>

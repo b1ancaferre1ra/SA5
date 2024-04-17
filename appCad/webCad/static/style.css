@@ -1,0 +1,156 @@
+body{
+    background-color: rgb(240, 240, 240);
+    padding-top: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p{
+    color: rgb(80, 76, 76);
+    font-size: 16;
+}
+
+strong{
+    color: rgba(53, 51, 51, 0.767);
+}
+
+h3{
+    color:rgba(43, 41, 41, 0.767);
+}
+
+.cadNow{
+    text-align: center;
+}
+
+/* Estilo para o cabeçalho (header) */
+header {
+    /* Estilos para o cabeçalho (header) */
+    background-color: rgb(71, 70, 70);
+    color: white;
+    padding: 16px;
+    text-align: center;
+    position: fixed; /* Fixar o header na parte superior */
+    width: 100%; /* Preencher toda a largura */
+    top: 0; /* Alinhar o topo na parte superior */
+    left: 0; /* Alinhar a esquerda no lado esquerdo */
+    z-index: 1000; /* Elevar acima de outros elementos */
+}
+
+nav ul {
+    /* Estilos para a lista não ordenada dentro do nav */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    /* Estilos para os itens da lista de navegação */
+    display: inline; /* Exibir os itens em linha */
+    margin-right: 20px;
+}
+
+nav ul li a {
+    /* Estilos para os links de navegação */
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16;
+}
+
+nav ul li a:hover {
+    /* Estilos para o hover dos links de navegação */
+    font-size: 16.5;
+    text-decoration: underline;
+    color: rgb(230, 228, 228);
+}
+
+.container {
+    /* Container para envolver o conteúdo da página */
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centralizar o container horizontalmente */
+    padding: 20px;
+    /*margin-top:100px;*/
+}
+
+/* Estilo para a tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Estilo para as células da tabela */
+th, td {
+    border: 1px solid #696767;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Estilo para o cabeçalho da tabela */
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* Estilo para os links na tabela */
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+/* Estilo para os botões de ação na tabela */
+a:hover {
+    
+    font-weight: bold;
+}
+
+/* Estilizando os campos de entrada (input) */
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+    background-color: #d6d6d6;
+    width: 300px; /* Largura desejada para os campos */
+    padding: 10px; /* Espaçamento interno dentro dos campos */
+    border: 1px solid #a09e9e; /* Borda sólida com cor cinza */
+    border-radius: 5px; /* Borda arredondada */
+    box-sizing: border-box; /* Inclui o padding na largura do campo */
+    margin-bottom: 10px; /* Espaçamento abaixo de cada campo */
+}
+
+/* Estilo específico para o input do tipo 'date' */
+input[type="date"] {
+    /* Estilo para a seta do campo de data (geralmente oculta em alguns navegadores) */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Adiciona um ícone personalizado para a seta do calendário */
+    background-image: url('path/to/calendar-icon.png');
+    background-size: 20px; /* Tamanho do ícone */
+    background-position: right center; /* Posiciona o ícone à direita no centro */
+    background-repeat: no-repeat; /* Não repete o ícone */
+    padding-right: 30px; /* Ajusta o padding para acomodar o ícone */
+}
+
+/* Estilizando o botão */
+button {
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border: none; /* Removendo a borda do botão */
+    border-radius: 5px; /* Borda arredondada */
+    background-color: rgb(70, 71, 71); /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    cursor: pointer; /* Alterando o cursor ao passar sobre o botão */
+}
+
+/* Estilizando o botão ao passar o mouse sobre ele */
+button:hover {
+    background-color: #333; /* Cor de fundo alterada no hover */
+}
+
+form{
+    text-align: center;
+}
+
+#msg{
+    font-style: bold;
+    font-size: 20;
+    text-align: center;
+}
